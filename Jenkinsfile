@@ -1,13 +1,7 @@
 pipeline {
     agent any
-
-    stages {
-        stage('clone') {
-            steps {
-                echo 'clone is successful from github'
-            }
-        }
-    stage('build') {
+stages {
+      stage('build') {
             steps {
                 echo 'biuld is successful using maven'
             }

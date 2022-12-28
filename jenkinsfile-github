@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clone') {
+            steps {
+                echo 'clone is github server'
+            }
+        }
+        stage('build') {
+            steps {
+                echo 'build is successfully using maven'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'the test cases will be executed sucessfully'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deployment is successfully completed'
+            }
+        }
+    }
+}

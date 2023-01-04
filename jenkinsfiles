@@ -2,16 +2,27 @@
     agent any
 
     stages {
+    
+    stage('clone') {
+            steps {
+           git branch: 'main', credentialsId: 'github-ser', poll: false, url: 'https://github.com/Haritha123475/haritha.hk.git'
+                echo 'clone is successfully using github'
+            }
+        }
+     stage('build ') {
+            steps {
+            sh 'mvn clean package'
+            echo 'build is successfully using maven'
+            }
+       }
        
        stage('test') {
             steps {
-                echo 'the test cases is successfully'
+             sh 'mvn test'
+             echo 'the test cases is successfully'
             }
         }
-     stage('deploy') {
-            steps {
-                echo 'this deploy is seccesfully executed'
-            }
-        }
-    }
+    }    
 }
+    
+

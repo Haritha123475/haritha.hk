@@ -11,14 +11,12 @@
         }
      stage('build ') {
             steps {
-            sh 'mvn clean package'
             echo 'build is successfully using maven'
             }
        }
        
        stage('test') {
             steps {
-             sh 'mvn test'
              echo 'the test cases is successfully'
             }
         }

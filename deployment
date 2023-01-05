@@ -22,7 +22,7 @@
         }
        stage('deployment') {
         steps {
-            sshagent([Deployment_3.111.55.176])
+            sshagent(['Deployment_3.111.55.176'])
             sh """
             scp -rp target/* .jar ec2-user@3.111.55.176:apache-tomcat-8.5.84/webapps
              ssh ec2-user@3.111.55.176:apache-tomcat-8.5.84/bin/shutdown.sh

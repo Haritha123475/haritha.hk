@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+    
+    //stage('clone') {
+            //steps {
+          // git branch: 'main', credentialsId: 'github-ser', poll: false, url: 'https://github.com/Haritha123475/haritha.hk.git'
+               // echo 'clone is successfully using github'
+          //  }
+       // }
+     stage('build ') {
+            steps {
+            echo 'build is successfully using maven'
+            }
+       }
+       
+       stage('test') {
+            steps {
+             echo 'the test cases is successfully'
+            }
+        }
+       stage('deployment') {
+        steps {
+            sshagent([' Developer_65.0.199.68 '])
+            sh """
+            scp -rp target/* .jar Develop@65.0.199.68 :apache-tomcat-8.5.84/webapps
+             ssh Develop@65.0.199.68:apache-tomcat-8.5.84/bin/shutdown.sh
+             ssh Develop@65.0.199.68:apache-tomcat-8.5.84/bin/startup.sh
+             """
+            }
+        } 
+    }    
+}

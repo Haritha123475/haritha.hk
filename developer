@@ -24,7 +24,8 @@ pipeline {
         steps {
          sshagent([' Developer_65.0.199.68 ']) { 
             sh """
-                 scp -rp target/* .jar Develop@13.233.133.252 :apache-tomcat-8.5.84/webapps
+                 scp -rp /home/e2-user/.jenkins/workpace/Developer_JOB/target/ *.jar
+                 Develop@13.233.133.252:apache-tomcat-8.5.84/webapps
                  ssh Develop@13.233.133.252:apache-tomcat-8.5.84/bin/shutdown.sh
                  ssh Develop@13.233.133.252:apache-tomcat-8.5.84/bin/startup.sh
                  """

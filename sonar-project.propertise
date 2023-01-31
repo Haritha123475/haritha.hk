@@ -1,15 +1,28 @@
-# Must be unique in a given SonarQube instance
-sonar.projectKey=my-project
-
-# This is the name and version displayed in the SonarQube UI.
-# Was mandatory prior to SonarQube 6.1.
-sonar.projectName=My project
+sonar.projectKey=org.sonarqube:sonarqube-scanner
+sonar.projectName=Example of SonarQube Scanner Usage
 sonar.projectVersion=1.0
- 
-# Path is relative to the sonar-project.properties file.
-# Replace "\" by "/" on Windows.
-# This property is optional if sonar.modules is set. 
-sonar.sources=src
- 
-# Encoding of the source code. Default is default system encoding
+
+sonar.sources=src,copybooks
+
 sonar.sourceEncoding=UTF-8
+
+## Cobol Specific Properties
+
+# comma-separated paths to directories with copybooks
+sonar.cobol.copy.directories=copybooks
+# comma-separated list of suffixes
+sonar.cobol.file.suffixes=cbl,cpy
+sonar.cobol.copy.suffixes=cpy
+
+
+
+## Flex Specific Properties
+
+# retrieve code coverage data from the Cobertura report
+sonar.flex.cobertura.reportPath=coverage-report/coverage-cobertua-flex.xml
+
+
+
+# PL/I Specific Properties
+sonar.pli.marginLeft=2
+sonar.pli.marginRight=0

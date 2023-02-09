@@ -1,5 +1,5 @@
-sonar.projectKey=my-project
-sonar.projectName=My project
+sonar.projectKey=my-project 1
+sonar.projectName=My project 1
 sonar.projectVersion=1.0
 sonar.language=objc
  

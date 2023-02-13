@@ -3,11 +3,7 @@ pipeline {
 
     stages {
         
-        stage('build') {
-            steps {
-                echo 'build is successfully using maven'
-            }
-        }
+        
         stage('test') {
             steps {
                 echo 'the test cases will be executed sucessfully'
